@@ -14,7 +14,6 @@ for (var r=0; r<9; r++) {
     // if number not available in number pool (not in row)
     while (numPool.indexOf(rand) == -1) {
       rand = Math.floor(Math.random() * 9) + 1;
-      count++;
     }
 
     // if number already in column
@@ -24,10 +23,10 @@ for (var r=0; r<9; r++) {
     }
     
     // if number already in section
-    if (inSection(r, c, rand)) {
-      numPool.splice(numPool.indexOf(rand), 1);
-      continue;
-    }
+    //if (inSection(r, c, rand)) {
+    //  numPool.splice(numPool.indexOf(rand), 1);
+    //  continue;
+    //}
     
     
     numPool.splice(numPool.indexOf(rand), 1);
@@ -36,13 +35,11 @@ for (var r=0; r<9; r++) {
     block.html(rand);
     
   }
-console.log("ran through " + count + " times!");
+
 }
 
 function inSection(row, column, num) {
-  for (var i=0; i<9; i++) {
-    
-  }
+  
 }
 function inColumn(row, column, num) {
   for (var i=0; i<9; i++) {
