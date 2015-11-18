@@ -17,7 +17,7 @@ for (var r=0; r<9; r++) {
     }
 
     // if number already in column
-    if (inColumn(r, c, rand)) {
+    if (inColumn(c, rand)) {
       numPool.splice(numPool.indexOf(rand), 1);
       continue;
     }
@@ -38,12 +38,12 @@ for (var r=0; r<9; r++) {
 
 }
 
-function inSection(row, column, num) {
+function inSection(column, num) {
   
 }
-function inColumn(row, column, num) {
+function inColumn(column, num) {
   for (var i=0; i<9; i++) {
-    var cell = row*i + column;
+    var cell = i*9 + column;
     var block = $('#block' + cell);
     if (block.html() == num) {
       return true;
